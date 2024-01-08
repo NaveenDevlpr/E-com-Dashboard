@@ -127,7 +127,7 @@ function LineChart() {
         />
         ):
         (
-       <Loader/>
+          <Loader/>
         )
       }
       </div>

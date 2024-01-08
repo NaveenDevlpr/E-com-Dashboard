@@ -43,7 +43,7 @@ const Page = (props: Props) => {
             </div>
         </motion.div>
     </div>
-    <div className="lg:col-span-3 lg:row-span-3 lg:col-start-4 lg:row-start-4">
+    <div className="lg:col-span-3 lg:row-span-3 lg:col-start-4 lg:row-start-4 lg:mt-2">
     <motion.div
     variants={fadeIn("down",0.3)}
     initial="hidden"

@@ -8,8 +8,8 @@ type Props = {
 
 const layout = ({children}: Props) => {
   return (
-    <div className='p-6 w-full h-full'>
-      <NavBar title={'Settings'}/>
+    <div className='p-6 w-full'>
+      <NavBar title={'User Activity'}/>
         {children}
       </div>
   )

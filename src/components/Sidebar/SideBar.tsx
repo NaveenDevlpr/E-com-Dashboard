@@ -53,6 +53,12 @@ const SideBar = (props: Props) => {
        },
        {
         id:4,
+        name:'User Activity',
+        link:'/useractivity',
+        icon:TbReportAnalytics
+       },
+       {
+        id:5,
         name:'Settings',
         link:'/settings',
         icon:IoMdSettings
@@ -139,7 +145,7 @@ const SideBar = (props: Props) => {
                     {
                         links.map((link,index)=>(
                             <Link key={link.id} href={link.link}
-                            className={`p-2.5 flex rounded-md gap-6 items-center md:cursor-pointer cursor-default duration-300 font-medium ${active===index?'bg-[#cb0c9f] text-[#f3edf2]':''}`}
+                            className={`p-2.5 flex rounded-md gap-6 items-center md:cursor-pointer cursor-default duration-300 font-medium ${active===index ?'bg-[#cb0c9f] text-[#f3edf2]':''}`}
                             onClick={()=>handleLinkClick(index)}
                             >
                                 <span className='min-w-max'>{React.createElement(link.icon,{size:'1.5rem'})}</span>

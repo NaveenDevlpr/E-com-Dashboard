@@ -27,14 +27,8 @@ const [year,setYear]=useState('2022')
     setOrder(res.totalOrder)
     setProfitMargin(res.profitMargin)
    }
-getData()
+   getData()
   },[])
-
-
-  
-  
-  
-  
 
 const [stateSales,setStateSales]=useState([])
 const [stateProfit,setStateProfit]=useState([])

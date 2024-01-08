@@ -7,6 +7,9 @@ import { card, pieData } from '@/types/types'
 import axios from 'axios'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import fadeIn from '@/lib/variant'
+
 
 export default function Home() {
 const [sales,setSales]=useState<number>(0)
@@ -73,17 +76,31 @@ const [stateProfit,setStateProfit]=useState([])
   return (
     <div className='flex flex-col px-5'>
         <NavBar title={'Overview'}/>
-        <div className='mt-5 flex lg:flex-row flex-col'>
+        <motion.div
+         
+         variants={fadeIn("up",0.7)}
+         initial="hidden"
+         whileInView={"show"}
+         viewport={{once:false,amount:0.7}}
+        className='mt-5 flex lg:flex-row flex-col'>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-4 md:gap-6 flex-1 md:mr-4 xl:mr-6">
             {
               values.map((val,index)=>(
                
-                 <Card key={val.id} indicator={val.name} value={val.value}/>
+                 <motion.div
+                  
+                variants={fadeIn("up",0.7)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{once:false,amount:0.7}}
+                 key={val.id} >
+                  <Card indicator={val.name} value={val.value}/>
+                 </motion.div>
                
               ))
             }
           </div>
-        </div>
+        </motion.div>
         <div className="grid max-lg:grid-cols-1 grid-cols-2 grid-rows-1 gap-4 mt-5">
           <div className="flex flex-col items-center justify-center bg-white rounded-md shadow-xl">
           <h2 className='lg:text-2xl sm:text-xl text-black font-semibold my-4'>Top 3 Sales by Region</h2>

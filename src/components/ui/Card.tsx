@@ -1,6 +1,5 @@
 import SimpleLineChart from '@/charts/AreaChart/simpleArea'
 import React, { FC } from 'react'
-
 interface Props {
     indicator:string,
     value:number,

@@ -17,6 +17,7 @@ import {
     PieController,
   } from 'chart.js';
 import { pieData, pieProps } from '@/types/types';
+import Loader from '@/components/ui/Loader';
   
  
   Chart.register(
@@ -71,8 +72,14 @@ const PieChart:FC<pieProps>=({piedata})=> {
   return (
     <div id="pie-chart-container"
     className='max-md:p-2 flex justify-center items-center'style={{width: '100%', height: '100%'}}>
-      <Doughnut data={data} 
-      />
+      {
+        data.datasets[0].data.length!==0 ? (
+          <Doughnut data={data} />
+        ):
+        (
+       <Loader/>
+        )
+      }
     </div>
   );
 }

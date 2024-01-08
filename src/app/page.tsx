@@ -10,14 +10,13 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import fadeIn from '@/lib/variant'
 
-
 export default function Overview() {
 const [sales,setSales]=useState<number>(0)
 const [profit,setProfit]=useState<number>(0)
 const [profitMargin,setProfitMargin]=useState<number>(0)
 const [order,setOrder]=useState<number>(0)
 
-
+const [year,setYear]=useState('2022')
 
   useEffect(()=>{
    const getData=async()=>{
@@ -28,9 +27,14 @@ const [order,setOrder]=useState<number>(0)
     setOrder(res.totalOrder)
     setProfitMargin(res.profitMargin)
    }
-   getData()
+getData()
   },[])
 
+
+  
+  
+  
+  
 
 const [stateSales,setStateSales]=useState([])
 const [stateProfit,setStateProfit]=useState([])

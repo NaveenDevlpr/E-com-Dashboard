@@ -131,7 +131,7 @@ const SideBar = (props: Props) => {
 
             <div className={`flex items-center gap-2.5 font-semibold py-3 mx-3.5 overflow-x-hidden`}>
                 <RxDashboard className='w-7 h-7 min-w-max text-center'/>
-                <span className='text-2xl whitespace-pre'>Dashboard</span>
+                <span className='text-2xl text black whitespace-pre'>Dashboard</span>
             </div>
 
             <div className='flex flex-col h-full mt-5'>

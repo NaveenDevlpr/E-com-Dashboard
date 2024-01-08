@@ -12,7 +12,7 @@ const NavBar:FC<Props> = ({title}) => {
       {
         title==='Overview'?(
           <div>
-            Hello
+            
           </div>
         ):''
       }

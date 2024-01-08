@@ -33,7 +33,7 @@ const PieChart:FC<pieProps>=({piedata})=> {
     labels: (piedata).map((data) => data.name),
     datasets: [
       {
-        label: 'Revenue',
+        label: '',
         data: (piedata).map((data) => data.total_quantity),
         backgroundColor: [
           '#cb0c9f',

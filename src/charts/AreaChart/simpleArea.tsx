@@ -6,26 +6,35 @@ import { ChartOptions, ChartType, ChartData,ChartDataset,ElementChartOptions,Plu
 import { FC } from 'react';
 Chart.register(LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip, Filler);
 import React from 'react';
+import { BarProps } from '@/types/types';
+import Loader from '@/components/ui/Loader';
 
 interface TopData {
   product_name: string;
   total_sales: number;
 }
-interface Props{
-    total:number[]
-}
 
-const SimpleLineChart:FC<Props>=({total})=> {
+
+const SimpleLineChart:FC<BarProps>=({datas})=> {
   
   const data = {
-    labels: [''],
+    labels: datas.map((data)=>data.name),
     datasets: [
       {
         label: '',
-        data: total,
+        data: datas.map((data)=>data.total_quantity),
         borderColor: '#cb0c9f',
-        borderWidth: 3,
+        pointBorderColor: '#cb0c9f',
+        pointBorderWidth: 3,
         tension: 0.5,
+        fill: true,
+        backgroundColor: (context:any) => {
+          const ctx = context.chart.ctx as CanvasRenderingContext2D;
+          const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+          gradient.addColorStop(0, '#f797e1');
+          gradient.addColorStop(1, '#f3edf2');
+          return gradient;
+        },
       },
     ],
   };
@@ -46,7 +55,7 @@ const SimpleLineChart:FC<Props>=({total})=> {
           display: false,
         },
         ticks: {
-          display:false,
+          display:true,
           font: {
             size:  14,
             weight: 'normal',
@@ -70,7 +79,7 @@ const SimpleLineChart:FC<Props>=({total})=> {
           display: false,
         },
         ticks: {
-          display:false,
+          display:true,
           font: {
             size:  14,
             weight: 'normal',
@@ -97,11 +106,15 @@ const SimpleLineChart:FC<Props>=({total})=> {
   return (
       <div id="line-chart-container" 
      className='flex justify-center items-center' style={{width:'100%',height:'100%'}}>
-           <Line 
-        data={data} options={options} 
-       
-        style={{padding:'20px'}}
-        />
+           {
+        data.datasets[0].data.length!==0 ? (
+          <Line 
+          data={data} options={options} />
+        ):
+        (
+          <Loader/>
+        )
+      }
     
       </div>
        

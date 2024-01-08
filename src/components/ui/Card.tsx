@@ -1,3 +1,5 @@
+'use client'
+
 import SimpleLineChart from '@/charts/AreaChart/simpleArea'
 import React, { FC } from 'react'
 interface Props {

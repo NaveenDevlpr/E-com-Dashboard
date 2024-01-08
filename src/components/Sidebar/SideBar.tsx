@@ -29,7 +29,8 @@ const SideBar = (props: Props) => {
     let isTab=useMediaQuery({query: '(max-width:768px)' })
     
     const [isOpen,setOpen]=useState(isTab?false:true)
-    const [active,setActive]=useState<number>(0)
+   
+    
     
 
     const links:navlinks[]=[
@@ -104,21 +105,27 @@ const SideBar = (props: Props) => {
         else{
             setOpen(true)
         }
-
-
-        const storedActiveLink = localStorage.getItem('activeLinkIndex');
-    if (storedActiveLink !== null) {
-      setActive(parseInt(storedActiveLink, 10));
-    }
         
     },[isTab])
    
 
+
+    const getInitialActiveLink = () => {
+        const storedActiveLink = localStorage.getItem('activeLinkIndex');
+        if (storedActiveLink !== null) {
+          return parseInt(storedActiveLink, 10);
+        }
+        return 0;
+      };
+      const initialActiveLink = getInitialActiveLink();
+
+      const [active,setActive]=useState(initialActiveLink)
     const handleLinkClick = (index: number) => {
         setActive(index);
-      
         localStorage.setItem('activeLinkIndex', index.toString());
       };
+
+
   return (
    <div className=''>
 
@@ -144,13 +151,13 @@ const SideBar = (props: Props) => {
                 <ul className='flex flex-col px-2.5 text-[1rem] space-y-5 font-medium overflow-x-hidden'>
                     {
                         links.map((link,index)=>(
-                            <Link key={link.id} href={link.link}
-                            className={`p-2.5 flex rounded-md gap-6 items-center md:cursor-pointer cursor-default duration-300 font-medium ${active===index ?'bg-[#cb0c9f] text-[#f3edf2]':''}`}
+                            <a key={link.id} href={link.link}
+                            className={`p-2.5 flex rounded-md gap-6 items-center md:cursor-pointer cursor-default duration-300 font-medium ${active!==index ?'':'bg-[#cb0c9f] text-[#f3edf2]'}`}
                             onClick={()=>handleLinkClick(index)}
                             >
                                 <span className='min-w-max'>{React.createElement(link.icon,{size:'1.5rem'})}</span>
                                 <li key={link.id}>{link.name}</li>
-                            </Link>
+                            </a>
                         ))
                     }
                 </ul>
@@ -161,7 +168,7 @@ const SideBar = (props: Props) => {
                 isOpen?{
                     x:0,y:0,rotate:0
                 }:{
-                    x:10,y:350,rotate:180
+                    x:10,y:400,rotate:180
                 }
             }
             transition={{duration:0}}

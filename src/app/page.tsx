@@ -16,10 +16,17 @@ const [profit,setProfit]=useState<number>(0)
 const [profitMargin,setProfitMargin]=useState<number>(0)
 const [order,setOrder]=useState<number>(0)
 
-const [year,setYear]=useState('2022')
+const [stateSales,setStateSales]=useState([])
+const [stateProfit,setStateProfit]=useState([])
 
   useEffect(()=>{
-   const getData=async()=>{
+  
+   getData()
+
+   getPieData()
+  },[])
+
+  const getData=async()=>{
     const data=await axios.get('api/summary')
     const res=data.data
     setSales(res.totalSales)
@@ -27,20 +34,16 @@ const [year,setYear]=useState('2022')
     setOrder(res.totalOrder)
     setProfitMargin(res.profitMargin)
    }
-   getData()
-  },[])
 
-const [stateSales,setStateSales]=useState([])
-const [stateProfit,setStateProfit]=useState([])
-  useEffect(()=>{
-    const getPieData=async()=>{
-      const data=await axios.get('api/pieData')
-      const result=data.data
-      setStateSales(result.formattedResultSales)
-      setStateProfit(result.formattedResultProfit)
-    }
-    getPieData()
-  })
+
+  const getPieData=async()=>{
+    const data=await axios.get('api/pieData')
+    const result=data.data
+    setStateSales(result.formattedResultSales)
+    setStateProfit(result.formattedResultProfit)
+  }
+
+ 
 
   
   const values:card[]=[
@@ -75,7 +78,6 @@ const [stateProfit,setStateProfit]=useState([])
     <div className='flex flex-col px-5'>
         <NavBar title={'Overview'}/>
         <motion.div
-         
          variants={fadeIn("up",0.3)}
          initial="hidden"
          whileInView={"show"}

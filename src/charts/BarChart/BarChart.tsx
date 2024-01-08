@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { BarProps } from '@/types/types';
+import Loader from '@/components/ui/Loader';
 
 
 ChartJS.register(
@@ -52,9 +53,17 @@ const data = {
   ],
 };
  return(<div className='w-full h-full'>
-    <Bar options={options} data={data} />
+    {
+        data.datasets[0].data.length!==0 ? (
+            <Bar options={options} data={data} />
+          ):
+          (
+         <Loader/>
+          )
+    }
  </div>)
 }
 
 
 export default BarChart
+

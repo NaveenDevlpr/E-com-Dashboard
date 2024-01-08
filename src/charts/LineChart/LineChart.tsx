@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { BarProps } from '@/types/types';
+import Loader from '@/components/ui/Loader';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -66,9 +67,17 @@ const Lines:FC<BarProps>=({datas})=> {
   };
   return (
     <div className='' style={{width:'100%',height:'100%'}}>
-      <Line options={options} data={data} />
+       {
+        data.datasets[0].data.length!==0 ? (
+          <Line options={options} data={data} />
+        ):
+        (
+       <Loader/>
+        )
+      }
     </div>
   );
 }
 
 export default Lines
+

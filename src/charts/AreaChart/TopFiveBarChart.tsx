@@ -6,6 +6,7 @@ import { ChartOptions, ChartType, ChartData,ChartDataset,ElementChartOptions,Plu
 
 Chart.register(LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip, Filler);
 import React from 'react';
+import Loader from '@/components/ui/Loader';
 
 interface TopData {
   product_name: string;
@@ -117,15 +118,23 @@ function LineChart() {
   return (
       <div id="line-chart-container" 
      className='flex justify-center items-center' style={{width:'100%',height:'100%'}}>
-           <Line 
+           {
+        data.datasets[0].data.length!==0 ? (
+          <Line 
         data={data} options={options} 
        
         style={{padding:'20px'}}
         />
-    
+        ):
+        (
+       <Loader/>
+        )
+      }
       </div>
        
   );
 }
 
 export default LineChart;
+
+    

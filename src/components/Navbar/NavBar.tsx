@@ -6,8 +6,17 @@ interface Props  {
 
 const NavBar:FC<Props> = ({title}) => {
   return (
-   <div className='text-4xl text-black font-semibold'>
+   <div className='text-4xl text-black font-semibold flex items-center justify-between'>
     {title}
+    <div>
+      {
+        title==='Overview'?(
+          <div>
+            Hello
+          </div>
+        ):''
+      }
+    </div>
    </div>
   )
 }

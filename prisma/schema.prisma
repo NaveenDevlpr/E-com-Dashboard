@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ecommerce_data {
+  customer_id                 String? @db.Text
+  customer_first_name         String? @db.Text
+  customer_last_name          String? @db.Text
+  category_name               String? @db.Text
+  product_name                String? @db.Text
+  customer_segment            String? @db.Text
+  customer_city               String? @db.Text
+  customer_state              String? @db.Text
+  customer_country            String? @db.Text
+  customer_region             String? @db.Text
+  delivery_status             String? @db.Text
+  order_date                  String? @db.Text
+  order_id                    String? @db.Text
+  ship_date                   String? @db.Text
+  shipping_type               String? @db.Text
+  days_for_shipment_scheduled Int?
+  days_for_shipment_real      Int?
+  order_item_discount         Int?
+  sales_per_order             Int?
+  order_quantity              Int?
+  profit_per_order            Float?
+  id                          Int     @id @default(autoincrement())
+}

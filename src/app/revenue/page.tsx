@@ -38,7 +38,7 @@ const Page = (props: Props) => {
         viewport={{once:false,amount:0.3}}
         className='flex flex-col items-center w-full bg-white rounded-md shadow-xl'>
             <h2 className='lg:text-2xl sm:text-xl text-black font-semibold my-4 align-text-top'>Total Revenue By Regions</h2>
-            <div className='h-[200px] w-full'>
+            <div className='lg:h-[200px] h-[400px] w-full'>
                 <BarChart datas={regiondata}/>
             </div>
         </motion.div>
@@ -51,7 +51,7 @@ const Page = (props: Props) => {
     viewport={{once:false,amount:0.3}}
      className='flex flex-col items-center w-full bg-white rounded-md shadow-xl'>
             <h2 className='lg:text-2xl sm:text-xl text-black font-semibold my-4 align-text-top'>Total Profit By States</h2>
-            <div className='h-[200px] w-full'>
+            <div className='lg:h-[200px] h-[400px] w-full'>
                 <BarChart datas={profitdata}/>
             </div>
         </motion.div>

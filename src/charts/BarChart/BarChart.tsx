@@ -52,7 +52,7 @@ const data = {
     
   ],
 };
- return(<div className='w-full h-full'>
+ return(<div className='flex justify-center items-center' style={{width:'100%',height:'100%'}}>
     {
         data.datasets[0].data.length!==0 ? (
             <Bar options={options} data={data} />

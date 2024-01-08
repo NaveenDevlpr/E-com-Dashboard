@@ -121,10 +121,7 @@ function LineChart() {
            {
         data.datasets[0].data.length!==0 ? (
           <Line 
-        data={data} options={options} 
-       
-        style={{padding:'20px'}}
-        />
+        data={data} options={options} />
         ):
         (
           <Loader/>

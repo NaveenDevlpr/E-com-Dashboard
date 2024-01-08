@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import fadeIn from '@/lib/variant'
 
 
-export default function Home() {
+export default function Overview() {
 const [sales,setSales]=useState<number>(0)
 const [profit,setProfit]=useState<number>(0)
 const [profitMargin,setProfitMargin]=useState<number>(0)
@@ -131,7 +131,7 @@ const [stateProfit,setStateProfit]=useState([])
           viewport={{once:false,amount:0.3}}
           className="lg:col-span-2 row-start-1 items-center justify-between p-4 bg-white rounded-md shadow-xl ">
             <h2 className='lg:text-2xl sm:text-xl text-center text-black font-semibold'>Top 5 Sales</h2>
-            <div className='w-full sm:h-[250px] md:h-[300px] lg:h-[500px] '>
+            <div className='w-full h-[500px] '>
             <LineChart/>
             </div>
           </motion.div>

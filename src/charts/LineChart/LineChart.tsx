@@ -66,7 +66,7 @@ const Lines:FC<BarProps>=({datas})=> {
     ],
   };
   return (
-    <div className='' style={{width:'100%',height:'100%'}}>
+    <div className='flex justify-center items-center' style={{width:'100%',height:'100%'}}>
        {
         data.datasets[0].data.length!==0 ? (
           <Line options={options} data={data} />

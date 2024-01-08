@@ -29,6 +29,7 @@ export const options= {
         display: false,
       position: 'top' as const,
     },
+    
   },
   maintainAspectRatio: false
 };
@@ -45,7 +46,7 @@ const data = {
     {
       label: '',
       data:datas.map((data)=>data.total_quantity),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: '#cb0c9f',
     },
     
   ],

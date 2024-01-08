@@ -78,10 +78,10 @@ const [stateProfit,setStateProfit]=useState([])
         <NavBar title={'Overview'}/>
         <motion.div
          
-         variants={fadeIn("up",0.7)}
+         variants={fadeIn("up",0.3)}
          initial="hidden"
          whileInView={"show"}
-         viewport={{once:false,amount:0.7}}
+         viewport={{once:false,amount:0.3}}
         className='mt-5 flex lg:flex-row flex-col'>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-4 md:gap-6 flex-1 md:mr-4 xl:mr-6">
             {
@@ -89,10 +89,10 @@ const [stateProfit,setStateProfit]=useState([])
                
                  <motion.div
                   
-                variants={fadeIn("up",0.7)}
+                variants={fadeIn("up",0.3)}
                 initial="hidden"
                 whileInView={"show"}
-                viewport={{once:false,amount:0.7}}
+                viewport={{once:false,amount:0.3}}
                  key={val.id} >
                   <Card indicator={val.name} value={val.value}/>
                  </motion.div>
@@ -102,24 +102,39 @@ const [stateProfit,setStateProfit]=useState([])
           </div>
         </motion.div>
         <div className="grid max-lg:grid-cols-1 grid-cols-2 grid-rows-1 gap-4 mt-5">
-          <div className="flex flex-col items-center justify-center bg-white rounded-md shadow-xl">
+          <motion.div
+           variants={fadeIn("right",0.3)}
+           initial="hidden"
+           whileInView={"show"}
+           viewport={{once:false,amount:0.3}}
+          className="flex flex-col items-center justify-center bg-white rounded-md shadow-xl">
           <h2 className='lg:text-2xl sm:text-xl text-black font-semibold my-4'>Top 3 Sales by Region</h2>
               <div className='h-[400px] w-full'>
               <PieChart piedata={stateSales}/>
               </div>
-          </div>
-          <div className="flex flex-col items-center justify-between bg-white rounded-md shadow-xl">
+          </motion.div>
+          <motion.div 
+           variants={fadeIn("left",0.3)}
+           initial="hidden"
+           whileInView={"show"}
+           viewport={{once:false,amount:0.3}}
+          className="flex flex-col items-center justify-between bg-white rounded-md shadow-xl">
           <h2 className='lg:text-2xl sm:text-xl text-black font-semibold my-4'>Top 5 Profit by Region</h2>
                 <div className='h-[400px] w-full'>
                 <PieChart piedata={stateProfit}/>
                 </div>
-            </div>
-          <div className="lg:col-span-2 row-start-1 items-center justify-between p-4 bg-white rounded-md shadow-xl ">
+            </motion.div>
+          <motion.div 
+          variants={fadeIn("left",0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once:false,amount:0.3}}
+          className="lg:col-span-2 row-start-1 items-center justify-between p-4 bg-white rounded-md shadow-xl ">
             <h2 className='lg:text-2xl sm:text-xl text-center text-black font-semibold'>Top 5 Sales</h2>
             <div className='w-full sm:h-[250px] md:h-[300px] lg:h-[500px] '>
             <LineChart/>
             </div>
-          </div>
+          </motion.div>
         </div>
         
     </div>

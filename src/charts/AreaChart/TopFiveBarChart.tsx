@@ -32,7 +32,7 @@ function LineChart() {
     labels: (topData as TopData[]).map((data) => data.product_name),
     datasets: [
       {
-        label: 'Revenue',
+        label:'' ,
         data: (topData as TopData[]).map((data) => data.total_sales),
         borderColor: '#cb0c9f',
         borderWidth: 3,

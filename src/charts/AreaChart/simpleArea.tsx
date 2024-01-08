@@ -21,7 +21,7 @@ const SimpleLineChart:FC<Props>=({total})=> {
     labels: [''],
     datasets: [
       {
-        label: 'Revenue',
+        label: '',
         data: total,
         borderColor: '#cb0c9f',
         borderWidth: 3,

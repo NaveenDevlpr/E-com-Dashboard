@@ -9,7 +9,7 @@ type Props = {
 const layout = ({children}: Props) => {
   return (
     <div className='p-6 w-full'>
-      <NavBar title={'Sales'}/>
+      <NavBar title={'Revenue'}/>
       <RevenueContextProvider>
         {children}
       </RevenueContextProvider>

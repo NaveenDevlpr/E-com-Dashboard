@@ -10,7 +10,8 @@ const createJestConfig = nextJest({
 const config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
-  
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  preset:'ts-jest',
 }
  
 

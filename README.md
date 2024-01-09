@@ -1,3 +1,48 @@
+This FullStack Application project focuses on visualizing data through charts with data sourced from a MySQL database. The technology stack employed includes Next.js, Tailwind CSS, Prisma, and MySQL, 
+
+
+Development Workflow:
+
+1. Data Acquisition:
+The project initiated with the acquisition of an Excel file containing comprehensive sales details from an e-commerce store.
+
+2. Database Setup:
+The Excel data was uploaded to a MySQL database, and the necessary database configurations were established.
+
+3. Frontend:
+Utilizing Next.js 14, the frontend was crafted with HTML and Tailwind CSS, ensuring a visually appealing and responsive user interface.
+
+4. API Implementation:
+API calls were created using Next.js, establishing a communication bridge between the application and the MySQL database.
+
+5. Prisma Integration:
+Prisma ORM was implemented as the intermediary layer, facilitating seamless data retrieval and manipulation between the application and the MySQL database.
+
+6. Data Visualization:
+Chart visualizations were implemented using react-chart.js, allowing for dynamic and interactive representation of the sales data.
+
+7. Navigation:
+The application features a sidebar for easy navigation across different sections.
+
+
+
+Key Technologies and Libraries:
+
+1. Tech Stack:
+Next.js: A comprehensive full-stack React framework.
+Tailwind CSS: Employed for styling and ensuring responsiveness.
+Prisma: Chosen as the ORM to interface between the application and MySQL database.
+MySQL: Utilized for storing and managing the sales data.
+
+2. Libraries:
+react-chart.js: Integrated for dynamic and interactive chart visualizations.
+framer-motion: Implemented for seamless animations and transitions.
+Axios: Leveraged for efficient data fetching from the MySQL database.
+
+3. State Management:
+React Context API: Implemented for global state management, facilitating data sharing across all components.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -15,22 +60,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -1,3 +1,5 @@
+************HAVE THE CURRENT VERSION OF NEXT.JS AND NODE FOR RUNNING THIS PROJECT************
+
 This FullStack Application project focuses on visualizing data through charts with data sourced from a MySQL database. The technology stack employed includes Next.js, Tailwind CSS, Prisma, and MySQL, 
 
 

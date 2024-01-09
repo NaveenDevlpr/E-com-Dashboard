@@ -115,10 +115,12 @@ const SideBar = (props: Props) => {
 
 
     const getInitialActiveLink = () => {
+      
         const storedActiveLink = localStorage.getItem('activeLinkIndex');
         if (storedActiveLink !== null) {
           return parseInt(storedActiveLink, 10);
         }
+       
         return 0;
       };
  const initialActiveLink = getInitialActiveLink();
@@ -131,12 +133,12 @@ const SideBar = (props: Props) => {
 
   return (
    <div className=''>
-
-    <div 
+    {/**<div 
     onClick={()=>setOpen(false)}
     className={`z-[998] bg-black/50 md:hidden inset-0 fixed max-h-screen transition-all duration-700 ${isOpen?'block':'hidden'}`}>
 
-    </div>
+    </div> */}
+    
         <motion.div variants={Sidebar_animation}
         initial={{x:isTab?-250:0}}
         animate={isOpen?"open":"closed"}

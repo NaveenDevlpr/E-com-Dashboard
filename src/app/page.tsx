@@ -1,14 +1,21 @@
 'use client'
-import LineChart from '@/charts/AreaChart/TopFiveBarChart'
+/*import LineChart from '@/charts/AreaChart/TopFiveBarChart'
 import PieChart from '@/charts/PieChart/PieChart'
 import NavBar from '@/components/Navbar/NavBar'
-import Card from '@/components/ui/Card'
+import Card from '@/components/ui/Card'*/
 import { card, pieData } from '@/types/types'
 import axios from 'axios'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import fadeIn from '@/lib/variant'
+
+
+import dynamic from 'next/dynamic';
+const LineChart = dynamic(() => import('@/charts/AreaChart/TopFiveBarChart'));
+const PieChart = dynamic(() => import('@/charts/PieChart/PieChart'));
+const NavBar = dynamic(() => import('@/components/Navbar/NavBar'));
+const Card = dynamic(() => import('@/components/ui/Card'));
 
 export default function Overview() {
 const [sales,setSales]=useState<number>(0)

@@ -30,7 +30,7 @@ const SideBar = (props: Props) => {
     
     const [isOpen,setOpen]=useState(isTab?false:true)
    
-    
+   
     
 
     const links:navlinks[]=[
@@ -106,6 +106,10 @@ const SideBar = (props: Props) => {
             setOpen(true)
         }
         
+        return () => {
+            
+            localStorage.removeItem('activeLinkIndex');
+          };
     },[isTab])
    
 
@@ -117,9 +121,8 @@ const SideBar = (props: Props) => {
         }
         return 0;
       };
-      const initialActiveLink = getInitialActiveLink();
-
-      const [active,setActive]=useState(initialActiveLink)
+ const initialActiveLink = getInitialActiveLink();
+ const [active,setActive]=useState(initialActiveLink)
     const handleLinkClick = (index: number) => {
         setActive(index);
         localStorage.setItem('activeLinkIndex', index.toString());
@@ -168,7 +171,7 @@ const SideBar = (props: Props) => {
                 isOpen?{
                     x:0,y:0,rotate:0
                 }:{
-                    x:10,y:400,rotate:180
+                    x:10,y:350,rotate:180
                 }
             }
             transition={{duration:0}}

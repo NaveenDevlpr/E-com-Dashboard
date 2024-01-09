@@ -14,6 +14,8 @@ const Settings = (props: Props) => {
         I'm a Next.js Full Stack Developer, proficient in HTML, CSS, JavaScript & React.js. Specialized in utilizing Tailwind CSS for
         responsive design and SQL for data management.
         </p>
+        <a href="https://www.linkedin.com/in/naveendeveloper/" target="_blank" rel="noopener noreferrer" className='text-blue-500 text-font-semibold'>LinkedIn Link</a>
+        <a href="https://github.com/NaveenDevlpr/" target="_blank" rel="noopener noreferrer" className='text-blue-500 text-font-semibold'>Github Link</a>
     </div>
   )
 }

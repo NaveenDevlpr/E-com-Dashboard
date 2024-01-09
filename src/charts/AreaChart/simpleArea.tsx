@@ -63,7 +63,7 @@ const SimpleLineChart:FC<BarProps>=({datas})=> {
         },
         title: {
           display: false,
-          text: 'Sales',
+          text: 'Total',
           padding: {
             bottom: 10,
           },

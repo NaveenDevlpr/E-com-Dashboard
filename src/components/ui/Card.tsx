@@ -10,7 +10,9 @@ interface Props {
 
 const Card:FC<Props>= ({indicator,value}) => {
   return (
-    <div className='bg-white relative max-md:w-full w-[250px] h-[120px] rounded-md shadow-lg flex items-center border-[#cb0c9f] border-[2px] transition-transform duration-300 transform hover:scale-110 cursor-pointer'>
+    <div className='bg-white relative max-md:w-full w-[250px] h-[120px] rounded-md shadow-lg flex items-center border-[#cb0c9f]  
+    hover:bg-[#f3edf2]
+    border-[2px] transition-transform duration-500 transform hover:scale-110 cursor-pointer'>
         <div className='flex flex-col items-start space-y-2 px-4 w-3/5'>
             <h2 className='text-gray-700 opacity-45 text-[14px]'>{indicator}</h2>
             {

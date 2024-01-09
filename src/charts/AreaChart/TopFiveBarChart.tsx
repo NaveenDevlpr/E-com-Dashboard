@@ -33,7 +33,7 @@ function LineChart() {
     labels: (topData as TopData[]).map((data) => data.product_name),
     datasets: [
       {
-        label:'' ,
+        label:'Sales' ,
         data: (topData as TopData[]).map((data) => data.total_sales),
         borderColor: '#cb0c9f',
         borderWidth: 3,
@@ -58,6 +58,8 @@ function LineChart() {
     plugins: {
       legend: {
         display: false,
+        position:'top',
+        
       },
     },
     responsive: true,
@@ -74,13 +76,13 @@ function LineChart() {
           },
         },
         title: {
-          display: false,
+          display: true,
           text: 'Sales',
           padding: {
-            bottom: 10,
+            bottom: 0,
           },
           font: {
-            size: 30,
+            size: 20,
             family: 'Montserrat',
           },
         },
@@ -98,13 +100,13 @@ function LineChart() {
           },
         },
         title: {
-          display: false,
+          display: true,
           text: 'Product',
           padding: {
-            top: 0,
+            top: 5,
           },
           font: {
-            size: 30,
+            size: 20,
             family: 'Montserrat',
           },
         },

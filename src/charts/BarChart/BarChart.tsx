@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   ChartData,
+  scales,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { BarProps } from '@/types/types';
@@ -31,6 +32,55 @@ export const options= {
       position: 'top' as const,
     },
     
+  },
+  scales:{
+    y: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        display:true,
+        font: {
+          size:  14,
+          weight: 'normal',
+        },
+      },
+      title: {
+        display: true,
+        text: 'Sales',
+        padding: {
+          bottom: 5,
+        },
+        font: {
+          size: 20,
+          family: 'Montserrat',
+        },
+      },
+      min: 50,
+    },
+    x: {
+      grid: {
+        display: false,
+      },
+      ticks: {
+        display:true,
+        font: {
+          size:  14,
+          weight: 'normal',
+        },
+      },
+      title: {
+        display: true,
+        text: 'Place',
+        padding: {
+          top: 5,
+        },
+        font: {
+          size: 20,
+          family: 'Montserrat',
+        },
+      },
+    },
   },
   maintainAspectRatio: false
 };

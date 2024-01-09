@@ -12,7 +12,9 @@ import fadeIn from '@/lib/variant'
 
 
 import dynamic from 'next/dynamic';
-const LineChart = dynamic(() => import('@/charts/AreaChart/TopFiveBarChart'));
+const LineChart = dynamic(() => import('@/charts/AreaChart/TopFiveBarChart'),{
+  loading: () => <p>Loading...</p>
+});
 const PieChart = dynamic(() => import('@/charts/PieChart/PieChart'));
 const NavBar = dynamic(() => import('@/components/Navbar/NavBar'));
 const Card = dynamic(() => import('@/components/ui/Card'));

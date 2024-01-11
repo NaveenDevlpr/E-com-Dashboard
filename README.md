@@ -1,5 +1,13 @@
 ************HAVE THE CURRENT VERSION OF NEXT.JS AND NODE FOR RUNNING THIS PROJECT************
 
+Database Setup:
+1. Install MySQL Workbench or any.
+2. Create a new Connection.
+3. username:root   password:naveenmk123
+4. get connected to the localhost.
+
+
+
 This FullStack Application project focuses on visualizing data through charts with data sourced from a MySQL database. The technology stack employed includes Next.js, Tailwind CSS, Prisma, and MySQL, 
 
 

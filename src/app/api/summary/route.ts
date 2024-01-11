@@ -34,7 +34,7 @@ export async function GET(req:Request){
       
           return NextResponse.json(totals);
     } catch (error) {
-        return NextResponse.json("Failed to fetch data")
+        return NextResponse.error()
     }
 }
 

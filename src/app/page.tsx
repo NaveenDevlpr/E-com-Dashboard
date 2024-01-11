@@ -36,12 +36,19 @@ const [stateProfit,setStateProfit]=useState([])
   },[])
 
   const getData=async()=>{
-    const data=await axios.get('api/summary')
-    const res=data.data
+   // const data=await axios.get('api/summary')
+    //const res=data.data
+   try {
+    const data=await fetch('api/summary')
+    const res=await data.json()
+    console.log(res)
     setSales(res.totalSales)
     setProfit(res.totalProfit)
     setOrder(res.totalOrder)
     setProfitMargin(res.profitMargin)
+   } catch (error) {
+    console.log(error)
+   }
    }
 
 
